@@ -2,15 +2,16 @@ import Image from "next/image";
 
 const Solutions = () => {
   return (
-    <section className="container mx-auto my-20">
-      <div className="text-4xl font-bold text-center text-black px-90 py-12">
+    <section className="container mx-auto my-20 px-4">
+      <div className="text-4xl font-bold text-center text-black py-8 md:py-12">
         Комплексные решения для вашего бизнеса
       </div>
-      <div className="flex flex-col gap-4 md:gap-4 mb-10 md:mb-14">
+
+      <div className="flex flex-col gap-4 mb-10 md:mb-14">
         {/* First row */}
-        <div className="flex gap-4">
+        <div className="flex flex-col md:flex-row gap-4">
           <div
-            className="bg-white rounded-[24px] flex flex-col-reverse items-end justify-between w-6/12"
+            className="bg-white rounded-[24px] flex flex-col-reverse items-end justify-between w-full md:w-6/12"
             style={{
               backgroundImage: 'url("/bg-2.png")',
               backgroundRepeat: "no-repeat",
@@ -19,37 +20,36 @@ const Solutions = () => {
             }}
           >
             <Image
-              className=""
               src="/woman.svg"
               alt="Female"
-              width={400}
-              height={400}
+              width={500}
+              height={500}
+              className="w-auto max-w-full"
             />
-            <div className="flex flex-col gap-2 px-10 w-full">
-              <h3 className="text-3xl font-bold text-black pt-10">
+            <div className="flex flex-col gap-2 px-7 sm:px-10 w-full">
+              <h3 className="text-2xl font-bold text-black pt-7 md:pt-10">
                 Автоматизация торговли
               </h3>
-              <p className="text-xl font-normal text-black/80 max-w-110">
+              <p className="text-lg font-normal text-black/80">
                 Комплексное оснащение розничных сетей, минимаркетов и сферы
                 услуг
               </p>
             </div>
           </div>
 
-          <div className=" bg-primary-600 rounded-[24px] flex flex-col justify-between items-center w-6/12">
+          <div className="bg-primary-600 rounded-[24px] flex flex-col justify-between items-center w-full md:w-6/12">
             <Image
-              className=""
               src="/logistic.svg"
               alt="Logistics"
               width={300}
               height={300}
+              className="w-auto max-w-full"
             />
-
-            <div className="flex flex-col gap-2 px-10">
-              <h3 className="text-3xl font-bold text-white">
+            <div className="flex flex-col gap-2 px-7">
+              <h3 className="text-2xl font-bold text-white">
                 Складская логистика
               </h3>
-              <p className="text-xl font-normal text-white/80 pb-10">
+              <p className="text-lg font-normal text-white/80 pb-7">
                 Комплексное оснащение складов и организации деятельности
                 складских комплексов
               </p>
@@ -58,27 +58,22 @@ const Solutions = () => {
         </div>
 
         {/* Second row */}
-        <div className="flex gap-4">
+        <div className="flex flex-col md:flex-row gap-4">
           <div
-            className="p-10 bg-primary-600 rounded-[24px] flex flex-col-reverse items-start w-5/12"
-            style={{
-              backgroundImage: 'url("/product-marking.svg")',
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "bottom center",
-              backgroundSize: "contain",
-            }}
+            className="bg-primary-600 rounded-[24px] flex flex-col-reverse justify-between items-center w-full md:w-5/12 relative overflow-hidden"
           >
-            {/* <div>
+            <div className="w-full h-full flex justify-center items-center">
               <Image
-                className=""
-                src="/product-marking.png"
-                alt="product-marking"
-                width={200}
-                height={200}
+                src="/box.svg"
+                alt="Tech"
+                className="w-full h-full object-contain"
+                width={500}
+                height={500}
               />
-            </div> */}
-            <div className="flex flex-col gap-2 mb-60">
-              <h3 className="text-3xl font-bold text-white">
+            </div>
+
+            <div className="relative flex flex-col gap-2 p-7">
+              <h3 className="text-2xl font-bold text-white ">
                 Маркировка продукции
               </h3>
               <p className="text-lg font-normal text-white/80">
@@ -88,8 +83,9 @@ const Solutions = () => {
               </p>
             </div>
           </div>
+
           <div
-            className="bg-white rounded-[24px] flex flex-col-reverse justify-between items-start w-7/12"
+            className="bg-white rounded-[24px] flex flex-col-reverse justify-between items-center w-full md:w-7/12 relative overflow-hidden"
             style={{
               backgroundImage: 'url("/bg-logo.png")',
               backgroundRepeat: "no-repeat",
@@ -97,33 +93,21 @@ const Solutions = () => {
               backgroundSize: "cover",
             }}
           >
-            <div className="flex gap-4">
+            <div className="w-full h-full flex justify-center items-center">
               <Image
-                className=""
-                src="/kit.svg"
-                alt="Kit"
-                width={250}
-                height={250}
-              />
-              <Image
-                className=""
-                src="/printer.svg"
-                alt="Printer"
-                width={200}
-                height={200}
-              />
-              <Image
-                className=""
-                src="/pos.svg"
-                alt="POS"
-                width={200}
-                height={200}
+                src="/tech.svg"
+                alt="Tech"
+                className="w-full h-full object-contain"
+                width={500}
+                height={500}
               />
             </div>
 
-            <div className="flex flex-col gap-2 px-10">
-              <h3 className="text-3xl font-bold text-black pt-10">Производства</h3>
-              <p className="text-xl font-normal text-black/80">
+            <div className="relative flex flex-col gap-2 p-7">
+              <h3 className="text-2xl font-bold text-black ">
+                Производства
+              </h3>
+              <p className="text-lg font-normal text-black/80">
                 Поставляем и внедряем оборудование: весы, POS-системы, ТСД,
                 RFID, сканеры, промышленную визуализацию и софт — WMS, TMS, BI.
                 Всё — под ключ.

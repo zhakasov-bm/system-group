@@ -3,13 +3,12 @@
 import Image from "next/image";
 
 const partners = [
-  "/partners/magnum.png",
-  "/partners/small.png",
-  "/partners/zara.png",
-  "/partners/adidas.png",
-  "/partners/goldApple.png",
-  "/partners/starbucks.png",
-  "/partners/hm.png",
+  "/partners/small.svg",
+  "/partners/gold-apple.svg",
+  "/partners/magnum.svg",
+  "/partners/zara.svg",
+  "/partners/adidas.svg",
+  "/partners/acnielsen.svg",
 ];
 
 const PartnerSlider = () => {
@@ -21,7 +20,7 @@ const PartnerSlider = () => {
       <div className="relative">
         <div className="flex gap-12 animate-carousel">
           {logos.map((src, idx) => (
-            <div key={idx} className="flex-shrink-0 w-40 h-20 flex items-center justify-center relative">
+            <div key={idx} className="flex-shrink-0 w-70 h-20 flex items-center justify-center relative">
               <Image
                 src={src}
                 alt={`Partner ${idx + 1}`}

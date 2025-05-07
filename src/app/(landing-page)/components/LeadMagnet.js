@@ -1,22 +1,20 @@
 import ButtonWA from "./ButtonWA";
+import PrimaryButton from "./PrimaryButton";
 
 const LeadMagnet = () => {
   return (
-    <section className="container mx-auto my-20">
-      <div className="flex flex-col gap-4 rounded-3xl p-10 justify-center items-center bg-white">
-        <h1 className="text-4xl font-bold text-center p-5">
-          Бесплатный расчёт стоимости <br />
-          автоматизации за 1 день
+    <section className="container mx-auto my-20 px-4">
+      <div className="flex flex-col gap-4 rounded-3xl p-8 md:p-10 justify-center items-center bg-white">
+        <h1 className="text-2xl md:text-4xl font-bold text-center md:px-60">
+          Бесплатный расчёт стоимости автоматизации за 1 день
         </h1>
-        <p className="text-lg font-normal text-center px-50">
+        <p className="text-lg font-normal text-center md:px-50">
           Анализируем процессы, выявим слабые места <br /> и предложим
-          оптимальное решение — бесплатно.
+          оптимальное решение.
         </p>
-        <div className="flex gap-4 py-10">
+        <div className="flex flex-col md:flex-row gap-4 pt-10 justify-center items-center w-full">
           <ButtonWA>Заказать консультацию</ButtonWA>
-          <button className="px-8 py-3 rounded-4xl bg-primary-600 text-white font-medium">
-            Оставить заявку
-          </button>
+          <PrimaryButton variant="primary">Оставить заявку</PrimaryButton>
         </div>
       </div>
     </section>

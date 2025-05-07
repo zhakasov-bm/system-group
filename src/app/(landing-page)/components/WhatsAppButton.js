@@ -1,29 +1,27 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { RiWhatsappFill } from 'react-icons/ri';
+import Link from "next/link";
+import Image from "next/image";
 
 const WhatsAppButton = () => {
   return (
-    <Link 
-      href="https://wa.me/your-number" 
+    <Link
+      href="https://wa.me/77769771303"
       target="_blank"
-      className="fixed bottom-32 right-20 z-50 group"
+      className="fixed md:bottom-24 bottom-16 md:right-16 right-8 z-50 group"
     >
       <div className="relative">
-        <div className="absolute right-16 bg-black text-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-          Write to WhatsApp
+        <div className="absolute font-medium right-16 bg-green-500 text-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+          Написать в WhatsApp
         </div>
-        <RiWhatsappFill size={60} className='text-green-500 bg-white rounded-xl p-1'/>
-        {/* <Image
-          src="/whatsapp.svg"
+        <Image
+          src="/whatsapp-icon.svg"
           alt="WhatsApp"
-          width={60}
-          height={60}
+          width={50}
+          height={50}
           className="hover:scale-110 transition-transform duration-300"
-        /> */}
+        />
       </div>
     </Link>
   );
 };
 
-export default WhatsAppButton; 
+export default WhatsAppButton;

@@ -76,7 +76,7 @@ const Navbar = () => {
               </div>
             </li>
             <li key="contact">
-              <Link href="/contact" className="hover:text-slate-200">Контакты</Link>
+              <Link href={`/contact`} className="hover:text-slate-200">Контакты</Link>
             </li>
             <PrimaryButton className="[backdrop-filter:blur(20px)] [background:linear-gradient(91.15deg,_rgba(255,_255,_255,_0.15),_rgba(153,_153,_153,_0.15))] border-white border-solid border-[1px]">Связаться</PrimaryButton>
           </ul>

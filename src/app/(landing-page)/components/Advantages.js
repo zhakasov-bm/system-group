@@ -29,7 +29,8 @@ const Advantages = () => {
         sizes="(max-width: 768px) 100vw, 100vw"
         quality={90}
       />
-      <div className="absolute inset-0 bg-black/40" /> {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/40" />{" "}
+      {/* Overlay for better text readability */}
       <div className="container relative z-10 mx-auto px-4 py-16 md:py-0 md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 text-white">
         <div className="flex flex-col gap-8 md:gap-16 items-center">
           <div className="flex flex-col gap-2 text-center">
@@ -37,27 +38,21 @@ const Advantages = () => {
               Преимущества
             </span>
             <h2 className="text-3xl md:text-4xl font-bold">
-              Комплексный подход "под ключ"
+              Комплексный подход &quot;под ключ&quot;
             </h2>
           </div>
-          
+
           <div className="grid grid-cols-2 md:flex md:flex-row gap-8 md:gap-12 lg:gap-16 justify-between items-center w-full max-w-6xl">
-            <AdvantageCard 
-              Icon={IoSettingsOutline}
-              title="Всe в одном месте"
-            />
-            <AdvantageCard 
+            <AdvantageCard Icon={IoSettingsOutline} title="Всe в одном месте" />
+            <AdvantageCard
               Icon={AiOutlineSafety}
               title="Надeжное оборудование"
             />
-            <AdvantageCard 
+            <AdvantageCard
               Icon={IoCheckmarkDoneSharp}
               title="Гарантия качества решений"
             />
-            <AdvantageCard 
-              Icon={TfiWorld}
-              title="Сервис по всей стране"
-            />
+            <AdvantageCard Icon={TfiWorld} title="Сервис по всей стране" />
           </div>
 
           <div className="mt-8 md:mt-12">

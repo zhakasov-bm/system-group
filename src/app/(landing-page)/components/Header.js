@@ -54,7 +54,13 @@ const Navbar = () => {
           href={"/"}
           className="text-2xl md:text-3xl text-white font-normal"
         >
-          <Image src="/logo.svg" alt="logo" width={220} height={100} />
+          <Image
+            src="/logo.svg"
+            alt="logo"
+            width={220}
+            height={100}
+            className="w-[150px] md:w-[220px] h-auto"
+          />
         </Link>
 
         {/* Burger Menu Button */}

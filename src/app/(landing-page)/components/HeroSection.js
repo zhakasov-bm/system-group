@@ -10,7 +10,7 @@ const StatCard = ({ value, description }) => (
 
 const HeroSection = () => {
   return (
-    <div className="relative min-h-[600px] md:h-[800px]">
+    <div className="relative min-h-[600px] md:h-[800px] overflow-hidden">
       <Image
         src="/hero.png"
         alt="Hero background"
@@ -22,28 +22,28 @@ const HeroSection = () => {
       />
       <div className="absolute inset-0 bg-black/30" />{" "}
       {/* Overlay for better text readability */}
-      <div className="container relative mx-auto px-4 py-24 md:pt-50 text-white text-left z-10">
-        <div className="flex flex-col gap-4 md:max-w-[720px]">
-          <h1 className="text-3xl md:text-5xl font-bold text-transparent !bg-clip-text [background:linear-gradient(91.15deg,_#fff,_#999)] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
+      <div className="container relative mx-auto px-4 py-32 md:pt-50 text-white text-left z-10">
+        <div className="flex flex-col items-start gap-4 md:max-w-[720px]">
+          <h1 className="text-4xl md:text-5xl font-bold text-transparent !bg-clip-text [background:linear-gradient(91.15deg,_#fff,_#999)] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
             Современные технологии для автоматизации бизнеса
           </h1>
-          <p className="text-xl max-w-[520px] md:px-0">
+          <p className="hidden md:block md:text-xl max-w-[520px] md:px-0">
             System Group Kazakhstan — надёжный партнёр в автоматизации торговли,
             логистики и производств
           </p>
+          
+          {/* Button moved under h1 */}
+          <div className="mt-6">
+            <PrimaryButton variant="primary" className="w-auto !px-6">
+              Получить консультацию
+            </PrimaryButton>
+          </div>
         </div>
 
-        <div className="w-[400px] ml-0 md:hidden">
+        {/* Robot image positioned at bottom right */}
+        <div className="absolute bottom-[-100px] right-[-150px] w-[450px] md:hidden">
           <Image src="/robot.svg" alt="Robot" width={500} height={500} />
         </div>
-
-        {/* Button for desktop - hidden on mobile */}
-        <div className="justify-center md:block md:mt-12">
-          <PrimaryButton variant="primary">
-            Получить консультацию
-          </PrimaryButton>
-        </div>
-
 
         <div className="hidden text-white md:flex md:flex-row text-center md:text-left gap-10 md:gap-40 mt-12 md:mt-24">
           <div>

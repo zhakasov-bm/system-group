@@ -24,7 +24,7 @@ const Vendors = () => {
       <h1 className="text-4xl font-bold text-black text-center py-12">
         Kлючевые вендоры
       </h1>
-      <div className="grid grid-cols-3 md:grid-cols-5 gap-8 items-center justify-center p-4">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-16 items-center justify-center p-4">
         {vendors.map((vendor, index) => (
           <div key={index} className="flex items-center justify-center">
             <Image src={vendor.src} alt={vendor.alt} width={100} height={100} />

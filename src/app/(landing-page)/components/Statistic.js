@@ -14,7 +14,7 @@ const partners = [
 const Statistic = () => {
   return (
     <section className="container mx-auto px-4">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black text-center py-8 md:py-12">
+      <h1 className="text-4xl max-w-sm md:max-w-none md:text-4xl font-bold text-black text-center py-8 md:py-12">
         Мы помогаем бизнесу расти
       </h1>
 
@@ -37,8 +37,12 @@ const Statistic = () => {
             <h2 className="text-5xl md:text-6xl text-black font-bold">
               {stat.value}
             </h2>
-            <span className="text-base sm:text-lg md:text-xl text-black/80 max-w-3xs">
-              {stat.description}
+            <span className="text-lg md:text-xl text-black/80 max-w-3xs">
+              {Array.isArray(stat.description) 
+                ? stat.description.map((line, i) => (
+                    <span key={i} className="block">{line}</span>
+                  ))
+                : stat.description}
             </span>
             {stat.icons?.map((icon, idx) => (
               <Image
@@ -56,7 +60,7 @@ const Statistic = () => {
         {/* Bottom Section */}
         <div className="bg-primary-600 rounded-2xl p-6 sm:p-10 flex flex-col relative md:col-span-3">
           <div className="flex flex-col gap-4 max-w-full md:max-w-3xl">
-            <h2 className="text-2xl md:text-5xl text-white font-bold">
+            <h2 className="text-3xl md:text-5xl text-white font-bold">
               Нам доверяют лидеры рынка
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-full md:max-w-xl">

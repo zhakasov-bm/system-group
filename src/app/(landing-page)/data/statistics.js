@@ -10,7 +10,7 @@ const statistics = [
     },
     {
       value: "10+",
-      description: "отраслей автоматизировано",
+      description: ["отраслей", "автоматизировано"],
       icons: [
         { src: "/s1.svg", alt: "icon 1", width: 80, height: 80, className: "absolute top-6 right-32" },
         { src: "/s2.svg", alt: "icon 2", width: 100, height: 100, className: "absolute bottom-10 right-6" },

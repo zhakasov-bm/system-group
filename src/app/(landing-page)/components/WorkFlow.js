@@ -16,8 +16,8 @@ const StepCard = ({ Icon, title, description }) => (
 
 const WorkFlow = () => {
   return (
-    <section className="container mx-auto my-24 custom-bg px-4">
-      <div className="text-4xl font-bold text-center md:text-right text-black md:py-10">
+    <section className="container mx-auto my-16 md:my-24 custom-bg px-4">
+      <div className="text-4xl font-bold text-left md:text-right text-black md:py-10">
         Как работает продукт
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 pt-10 auto-rows-fr">

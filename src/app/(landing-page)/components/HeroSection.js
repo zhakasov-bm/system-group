@@ -33,8 +33,8 @@ const HeroSection = () => {
           </p>
           
           {/* Button moved under h1 */}
-          <div className="mt-6">
-            <PrimaryButton variant="primary" className="w-auto !px-6">
+          <div className="mt-6 z-50">
+            <PrimaryButton variant="primary" className="w-auto !px-4">
               Получить консультацию
             </PrimaryButton>
           </div>

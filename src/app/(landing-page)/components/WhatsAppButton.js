@@ -14,7 +14,7 @@ const WhatsAppButton = () => {
         <span className="absolute right-16 bg-green-500 text-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
           Написать в WhatsApp
         </span>
-        <div className="flex items-center gap-3 bg-green-500/70 rounded-full p-2 animate-bounce md:animate-bounce overflow-hidden">
+        <div className="flex items-center gap-3 bg-green-500/80 rounded-full p-2 animate-bounce md:animate-bounce overflow-hidden">
           <div className="md:hidden flex items-center">
             <div className="animate-[slide_3s_ease-in-out_infinite] whitespace-nowrap">
               <span className="text-white/80 font-bold">Написать в WhatsApp</span>
@@ -23,8 +23,8 @@ const WhatsAppButton = () => {
           <Image
             src="/whatsapp-icon.svg"
             alt="WhatsApp"
-            width={50}
-            height={50}
+            width={30}
+            height={30}
             className="hover:scale-110 transition-transform duration-300"
           />
         </div>

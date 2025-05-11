@@ -4,7 +4,7 @@ const RequestForm = () => {
   return (
     <section className="container mx-auto my-20 px-4">
       <div
-        className="bg-primary-600 rounded-2xl p-10 md:p-20 flex flex-col md:flex-row justify-between items-center"
+        className="bg-primary-600 rounded-2xl p-8 md:p-20 flex flex-col md:flex-row justify-between items-center"
         style={{
           backgroundImage: 'url("/logo2.svg")',
           backgroundRepeat: "no-repeat",

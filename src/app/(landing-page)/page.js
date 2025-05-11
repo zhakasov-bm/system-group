@@ -9,7 +9,6 @@ import Advantages from "./components/Advantages";
 import Statistic from "./components/Statistic";
 import Vendors from "./components/Vendors";
 import RequestForm from "./components/RequestForm";
-import PostsSection from "./components/PostsSection";
 
 export default function Home() {
   return (
@@ -18,12 +17,10 @@ export default function Home() {
       <PartnerSlider />
       <About />
       <Statistic />
-      {/* <PostsSection /> */}
       <Solutions />
       <LeadMagnet />
       <WorkFlow />
       <Advantages />
-      
       <Vendors />
       <RequestForm />
     </div>

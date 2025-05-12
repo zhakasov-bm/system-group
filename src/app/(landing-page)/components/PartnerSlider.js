@@ -15,12 +15,15 @@ const PartnerSlider = () => {
           <div
             key={idx}
             className="flex items-center justify-center relative"
-            style={{ height: "50px", marginRight: "60px" }} // Fixed height
+            style={{ height: "60px", marginRight: "60px" }}
           >
-            <img
+            <Image
               src={src}
               alt={`Partner ${idx + 1}`}
-              style={{ height: "100%", width: "auto" }} // Keep height, adjust width
+              width={200} // Set width explicitly (required by next/image)
+              height={50} // Set height explicitly (required by next/image)
+              style={{ objectFit: "contain" }} // Ensures the image is properly sized
+              priority // Optional: loads images faster
             />
           </div>
         ))}

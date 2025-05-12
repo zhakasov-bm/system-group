@@ -1,6 +1,5 @@
 const partners = [
   "/partners/small.svg",
-  "/partners/small.png",
   "/partners/gold-apple.svg",
   "/partners/adidas.svg",
   "/partners/magnum.svg",

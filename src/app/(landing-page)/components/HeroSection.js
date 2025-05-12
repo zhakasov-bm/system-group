@@ -34,14 +34,14 @@ const HeroSection = () => {
           
           {/* Button moved under h1 */}
           <div className="mt-4 z-50">
-            <PrimaryButton variant="primary" className="w-auto !px-3 font-medium">
+            <PrimaryButton variant="primary" className="w-auto font-medium md:px-8 !px-4">
               Получить консультацию
             </PrimaryButton>
           </div>
         </div>
 
         {/* Robot image positioned at bottom right */}
-        <div className="absolute bottom-[-110px] right-[-150px] w-[450px] md:hidden">
+        <div className="absolute bottom-[-110px] right-[-180px] w-[450px] md:hidden">
           <Image src="/robot.svg" alt="Robot" width={500} height={500} />
         </div>
 

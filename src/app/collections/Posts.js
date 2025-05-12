@@ -1,5 +1,8 @@
 export const Posts = {
   slug: 'posts',
+  access: {
+    read: () => true, // Make posts publicly readable
+  },
   fields: [
     {
       name: 'title',
@@ -14,6 +17,7 @@ export const Posts = {
       name: "includedInBlog",
       type: "checkbox",
       defaultValue: true,
-    }
+      required: true,
+    },
   ],
-}
+};

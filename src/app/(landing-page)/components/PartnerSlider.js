@@ -11,19 +11,19 @@ const PartnerSlider = () => {
   return (
     <div className="w-full overflow-hidden py-8">
       <Marquee speed={70} gradient={false} pauseOnHover={false}>
-        {logos.map((src, idx) => (
+        {logos.map((partner, idx) => (
           <div
             key={idx}
             className="flex items-center justify-center relative"
             style={{ height: "60px", marginRight: "60px" }}
           >
             <Image
-              src={src}
-              alt={`Partner ${idx + 1}`}
-              width={200} // Set width explicitly (required by next/image)
-              height={50} // Set height explicitly (required by next/image)
-              style={{ objectFit: "contain" }} // Ensures the image is properly sized
-              priority // Optional: loads images faster
+              src={partner.src} // Access the `src` property
+              alt={partner.alt} // Access the `alt` property
+              width={200} // Explicit width (can be adjusted)
+              height={60} // Explicit height (can be adjusted)
+              style={{ objectFit: "contain" }} // Ensures the image scales nicely
+              priority // Optional: faster loading
             />
           </div>
         ))}

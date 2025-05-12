@@ -1,13 +1,13 @@
 const partners = [
-  "/partners/small.svg",
-  "/partners/gold-apple.svg",
-  "/partners/adidas.svg",
-  "/partners/magnum.svg",
-  "/partners/h&m.svg",
-  "/partners/zara.svg",
-  "/partners/waikiki.svg",
-  "/partners/acnielsen.svg",
-  "/partners/spar.svg",
+  { src: "/partners/small.svg", alt: "small" },
+  { src: "/partners/gold-apple.svg", alt: "gold-apple" },
+  { src: "/partners/adidas.svg", alt: "adidas" },
+  { src: "/partners/magnum.svg", alt: "magnum" },
+  { src: "/partners/h&m.svg", alt: "h&m" },
+  { src: "/partners/zara.svg", alt: "zara" },
+  { src: "/partners/waikiki.svg", alt: "waikiki" },
+  { src: "/partners/acnielsen.svg", alt: "acnielsen" },
+  { src: "/partners/spar.svg", alt: "spar" },
 ];
 
 export default partners;

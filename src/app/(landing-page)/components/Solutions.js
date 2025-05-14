@@ -60,7 +60,7 @@ const Solutions = () => {
         {/* Second row */}
         <div className="flex flex-col md:flex-row gap-4">
           <div
-            className="bg-primary-600 rounded-[24px] flex flex-col-reverse justify-between items-center w-full md:w-5/12 relative overflow-hidden"
+            className="bg-primary-600 rounded-[24px] flex flex-col-reverse justify-between items-center w-full md:w-6/12 relative overflow-hidden"
           >
             <div className="w-full h-full flex justify-center items-center">
               <Image
@@ -85,7 +85,7 @@ const Solutions = () => {
           </div>
 
           <div
-            className="bg-white rounded-[24px] flex flex-col-reverse justify-between items-center w-full md:w-7/12 relative overflow-hidden"
+            className="bg-white rounded-[24px] flex flex-col-reverse justify-between items-center w-full md:w-6/12 relative overflow-hidden"
             style={{
               backgroundImage: 'url("/bg-logo.png")',
               backgroundRepeat: "no-repeat",

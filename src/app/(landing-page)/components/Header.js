@@ -49,7 +49,7 @@ const Navbar = () => {
 
   return (
     <nav className="absolute w-full top-0 left-0 right-0 z-20">
-      <div className="flex container p-4 lg:py-4 flex-wrap items-center justify-between mx-auto mt-4">
+      <div className="flex container p-4 lg:py-4 items-center justify-between mx-auto mt-4">
         <Link
           href={"/"}
           className="text-2xl md:text-3xl text-white font-normal"
@@ -151,11 +151,11 @@ const Navbar = () => {
               </div>
             </li>
             <li key="contact">
-              <Link href={`/posts/1`} className="hover:text-slate-200">
+              <Link href={`/contact`} className="hover:text-slate-200">
                 Контакты
               </Link>
             </li>
-            <div className="hover:text-primary-600 transition-colors text-white">
+            <div className="hover:text-primary-600 transition-colors text-white hidden lg:block">
               <Link
                 href="tel:+77066418159"
                 className="font-bold flex items-center gap-2 hover:underline"

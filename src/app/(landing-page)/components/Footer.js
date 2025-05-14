@@ -90,7 +90,7 @@ const Footer = () => {
             <h3 className="text-lg md:text-xl font-bold">Главная</h3>
             <ul className="flex flex-col gap-2 text-lg md:text-base">
               <li>
-                <FooterLink href="#about">О компании</FooterLink>
+                <FooterLink href="/#about">О компании</FooterLink>
               </li>
             </ul>
           </div>

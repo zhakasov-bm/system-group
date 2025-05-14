@@ -8,7 +8,7 @@ export async function submitForm(prevState, formData) {
     city: formData.get("city"),
     phone: formData.get("phone"),
     comment: formData.get("comment"),
-    access_key: "5ad1bd5f-b606-4450-ae6e-0630ebca9a84",
+    access_key: "d37899ce-7aa0-4476-a07b-413b7b4e8354",
   };
 
   try {

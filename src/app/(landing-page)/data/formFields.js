@@ -1,0 +1,40 @@
+export const formFields = [
+  {
+    id: "name",
+    label: "Имя",
+    type: "text",
+    placeholder: "Введите ваше имя",
+    required: true,
+  },
+  {
+    id: "company",
+    label: "Название компании",
+    type: "text",
+    placeholder: "Введите название компании",
+    required: true,
+  },
+  {
+    id: "city",
+    label: "Город",
+    type: "text",
+    placeholder: "Введите ваш город",
+    required: true,
+  },
+  {
+    id: "phone",
+    label: "Телефон",
+    type: "text",
+    placeholder: "Введите номер телефона",
+    required: true,
+    pattern: "[0-9]*",
+    inputMode: "numeric",
+    customHandler: true,
+  },
+  {
+    id: "comment",
+    label: "Комментарий / какие задачи хотите решить",
+    type: "textarea",
+    placeholder: "Опишите ваши задачи",
+    required: true,
+  },
+]; 

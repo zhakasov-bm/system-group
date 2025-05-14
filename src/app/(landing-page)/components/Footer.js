@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { AiFillInstagram } from "react-icons/ai";
 import { FaLinkedin, FaYoutube } from "react-icons/fa";
@@ -51,7 +51,9 @@ const Footer = () => {
   useEffect(() => {
     const fetchMenuItems = async () => {
       try {
-        const response = await fetch("/api/posts?where[includedInBlog][equals]=true");
+        const response = await fetch(
+          "/api/posts?where[includedInBlog][equals]=true"
+        );
         const data = await response.json();
         setMenuItems(data.docs || []);
       } catch (error) {
@@ -63,7 +65,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-zinc-950 text-white py-12 md:py-20">
+    <footer className="bg-zinc-950 text-white py-12 md:py-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Logo and Social */}
@@ -128,17 +130,20 @@ const Footer = () => {
               </li>
               <li className="flex flex-col gap-1">
                 <span className="font-medium text-white">Email:</span>
-                <FooterLink href="mailto:info@sga.kz">
-                  info@sga.kz
-                </FooterLink>
+                <FooterLink href="mailto:info@sga.kz">info@sga.kz</FooterLink>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/20 pt-6 mt-8 md:mt-12">
-          <p className="text-lg md:text-base text-white/50 text-center">
-            Copyright © SystemGroup {new Date().getFullYear()}. All rights reserved.
+        <div className="border-t border-white/20 pt-6 mt-8 md:mt-8 text-white/50 text-xs">
+          <p className="">
+            Copyright © SystemGroup {new Date().getFullYear()}. All rights
+            reserved.
+          </p>
+          <p>
+            Данные на сайте носят информационный характер и не являются
+            публичной офертой
           </p>
         </div>
       </div>

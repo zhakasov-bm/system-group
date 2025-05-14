@@ -15,7 +15,7 @@ const vendors = [
   { src: "/vendors/cas.svg", alt: "cas" },
   { src: "/vendors/soti.svg", alt: "soti" },
   { src: "/vendors/sato.svg", alt: "sato" },
-  { src: "/vendors/digi.svg", alt: "digi" },
+  { src: "/vendors/digi.png", alt: "digi" },
 ];
 
 const Vendors = () => {

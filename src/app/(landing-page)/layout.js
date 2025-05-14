@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Sytem Group Kazakhstan",
+  title: "System Group Kazakhstan",
   description: "Надёжный партнёр в автоматизации торговли, логистики и производств",
 };
 

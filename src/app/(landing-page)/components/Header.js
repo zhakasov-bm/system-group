@@ -15,9 +15,7 @@ const Navbar = () => {
   useEffect(() => {
     const fetchMenuItems = async () => {
       try {
-        const response = await fetch(
-          "/api/posts?where[includedInBlog][equals]=true"
-        );
+        const response = await fetch("/api/posts");
         const data = await response.json();
         setMenuItems(data.docs || []);
       } catch (error) {

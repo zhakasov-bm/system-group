@@ -5,23 +5,23 @@ import Image from "next/image";
 import PrimaryButton from "../../components/PrimaryButton";
 
 const Page = async ({ params }) => {
-  const { postId } = params;
+  // Явно ждем параметры
+  const awaitedParams = await params;
+  const { postId } = awaitedParams;
+
+  // Получаем экземпляр Payload
   const payload = await getPayload();
-  let post = await payload.find({
+
+  // Запрос на получение поста по ID
+  const data = await payload.findByID({
     collection: "posts",
-    where: {
-      id: {
-        equals: postId,
-      },
-    },
+    id: postId,
   });
 
-  if (!post.docs || post.docs.length === 0) {
+  // Если пост не найден
+  if (!data) {
     return <div>Post not found</div>;
   }
-
-  let data = post.docs[0];
-  console.log(data);
 
   return (
     <div>
@@ -35,7 +35,7 @@ const Page = async ({ params }) => {
           sizes="(max-width: 768px) 100vw, 100vw"
           quality={90}
         />
-        <div className="absolute inset-0 bg-black/30" />{" "}
+        <div className="absolute inset-0 bg-black/30" />
         <div className="container relative mx-auto px-4 py-24 md:pt-50 text-white z-10">
           <h1 className="text-4xl text-center md:text-5xl font-bold text-transparent !bg-clip-text [background:linear-gradient(91.15deg,_#fff,_#999)] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
             {data.title}

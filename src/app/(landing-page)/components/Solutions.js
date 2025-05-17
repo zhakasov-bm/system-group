@@ -58,7 +58,7 @@ const Solutions = () => {
         </div>
 
         {/* Second row */}
-        <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex flex-col md:flex-row gap-4 md:max-h-[500px] overflow-hidden">
           <div
             className="bg-primary-600 rounded-[24px] flex flex-col-reverse justify-between items-center w-full md:w-6/12 relative overflow-hidden"
           >

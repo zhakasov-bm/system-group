@@ -23,7 +23,7 @@ const PrimaryButton = ({ children, className = "", variant = "primary" }) => {
     <>
       <button
         onClick={() => setIsModalOpen(true)}
-        className={`w-full md:max-w-fit rounded-4xl px-8 py-3 font-semibold cursor-pointer transition-colors duration-300 
+        className={`w-full md:max-w-fit min-w-[200px] t rounded-4xl px-8 py-3 font-semibold cursor-pointer transition-colors duration-300 
           ${variantClass.base} ${variantClass.hover} ${className}`}
       >
         {children}

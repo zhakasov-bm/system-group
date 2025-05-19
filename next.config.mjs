@@ -1,11 +1,15 @@
-import { withPayload } from "@payloadcms/next/withPayload";
+import { withPayload } from '@payloadcms/next/withPayload';
+import createNextIntlPlugin from 'next-intl/plugin';
+
+// You need to specify your request config path for next-intl
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.js');
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  // Your Next.js config here
+const baseConfig = {
   experimental: {
     reactCompiler: false,
   },
 };
-// Make sure you wrap your `nextConfig`
-// with the `withPayload` plugin
-export default withPayload(nextConfig);
+
+// Apply both plugins: first next-intl, then Payload
+export default withPayload(withNextIntl(baseConfig));

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const vendors = [
   { src: "/vendors/zebra.svg", alt: "zebra" },
@@ -19,10 +20,12 @@ const vendors = [
 ];
 
 const Vendors = () => {
+  const t = useTranslations("Vendors");
+
   return (
     <section className="container mx-auto my-20">
       <h1 className="text-4xl font-bold text-black text-center py-12">
-        Kлючевые вендоры
+        {t("title")}
       </h1>
       <div className="grid grid-cols-2 md:grid-cols-5 gap-16 items-center justify-center p-4">
         {vendors.map((vendor, index) => (

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import PrimaryButton from "./PrimaryButton";
+import { useTranslations } from "next-intl";
 
 const StatCard = ({ value, description }) => (
   <div className="text-left">
@@ -9,6 +10,10 @@ const StatCard = ({ value, description }) => (
 );
 
 const HeroSection = () => {
+  const tButton = useTranslations("Button");
+  const t = useTranslations("HomePage");
+  const keys = ["yearsOfService", "partners", "happyClients"];
+
   return (
     <div className="relative min-h-[600px] md:h-[800px] overflow-hidden">
       <Image
@@ -25,17 +30,19 @@ const HeroSection = () => {
       <div className="container relative mx-auto px-4 py-32 md:pt-50 text-white text-left z-10">
         <div className="flex flex-col items-start gap-4 md:max-w-[720px]">
           <h1 className="text-4xl md:text-5xl font-bold text-transparent !bg-clip-text [background:linear-gradient(91.15deg,_#fff,_#999)] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
-            Современные технологии для автоматизации бизнеса
+            {t("title")}
           </h1>
           <p className="hidden md:block md:text-xl max-w-[520px] md:px-0">
-            System Group Kazakhstan — надёжный партнёр в автоматизации торговли,
-            логистики и производств
+            {t("subtitle")}
           </p>
-          
+
           {/* Button moved under h1 */}
           <div className="mt-4 z-50">
-            <PrimaryButton variant="primary" className="w-auto font-medium md:px-8 !px-4">
-              Получить консультацию
+            <PrimaryButton
+              variant="primary"
+              className="w-auto font-medium md:px-8 !px-4"
+            >
+              {tButton("title")}
             </PrimaryButton>
           </div>
         </div>
@@ -46,23 +53,24 @@ const HeroSection = () => {
         </div>
 
         <div className="hidden text-white md:flex md:flex-row text-center md:text-left gap-10 md:gap-40 mt-12 md:mt-24">
-          <div>
-            <h1 className="text-5xl font-bold">30+ лет</h1>
-            <p className="text-lg font-normal">Опыта на рынках</p>
+          {keys.map((key) => (
+            <div key={key}>
+              <h1 className="text-5xl font-bold">{t(`${key}.value`)}</h1>
+              <p className="text-lg font-normal max-w-[180px]">{t(`${key}.title`)}</p>
+            </div>
+          ))}
+          {/* <div>
+            <h1 className="text-5xl font-bold">{CompanyStats("value")}</h1>
+            <p className="text-lg font-normal">{CompanyStats("title")}</p>
           </div>
           <div>
-            <h1 className="text-5xl font-bold">5000+</h1>
-            <p className="text-lg font-normal">
-              Проектов успешно <br />
-              реализовано
-            </p>
+            <h1 className="text-5xl font-bold">{CompanyStats("value")}</h1>
+            <p className="text-lg font-normal">{CompanyStats("title")}</p>
           </div>
           <div>
-            <h1 className="text-5xl font-bold">99%</h1>
-            <p className="text-base font-normal">
-              Клиентов остаются <br />с нами надолго
-            </p>
-          </div>
+            <h1 className="text-5xl font-bold">{CompanyStats("value")}</h1>
+            <p className="text-base font-normal">{CompanyStats("title")}</p>
+          </div> */}
         </div>
       </div>
     </div>

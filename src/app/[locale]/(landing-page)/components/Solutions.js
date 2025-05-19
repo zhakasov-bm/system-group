@@ -1,10 +1,13 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const Solutions = () => {
+  const t = useTranslations("Solution");
+
   return (
     <section className="container mx-auto my-20 px-4">
       <div className="text-4xl font-bold text-center text-black py-8 md:py-12">
-        Комплексные решения для вашего бизнеса
+        {t("title")}
       </div>
 
       <div className="flex flex-col gap-4 mb-10 md:mb-14">
@@ -28,11 +31,10 @@ const Solutions = () => {
             />
             <div className="flex flex-col gap-2 px-7 sm:px-10 w-full">
               <h3 className="text-2xl font-bold text-black pt-7 md:pt-10">
-                Автоматизация торговли
+                {t("block1.title")}
               </h3>
               <p className="text-lg font-normal text-black/80">
-                Комплексное оснащение розничных сетей, минимаркетов и сферы
-                услуг
+                {t("block1.message")}
               </p>
             </div>
           </div>
@@ -47,11 +49,10 @@ const Solutions = () => {
             />
             <div className="flex flex-col gap-2 px-7">
               <h3 className="text-2xl font-bold text-white">
-                Складская логистика
+                {t("block2.title")}
               </h3>
               <p className="text-lg font-normal text-white/80 pb-7">
-                Комплексное оснащение складов и организации деятельности
-                складских комплексов
+                {t("block2.message")}
               </p>
             </div>
           </div>
@@ -59,9 +60,7 @@ const Solutions = () => {
 
         {/* Second row */}
         <div className="flex flex-col md:flex-row gap-4 md:max-h-[500px] overflow-hidden">
-          <div
-            className="bg-primary-600 rounded-[24px] flex flex-col-reverse justify-between items-center w-full md:w-6/12 relative overflow-hidden"
-          >
+          <div className="bg-primary-600 rounded-[24px] flex flex-col-reverse justify-between items-center w-full md:w-6/12 relative overflow-hidden">
             <div className="w-full h-full flex justify-center items-center">
               <Image
                 src="/box.svg"
@@ -74,12 +73,10 @@ const Solutions = () => {
 
             <div className="relative flex flex-col gap-2 p-7">
               <h3 className="text-2xl font-bold text-white ">
-                Маркировка продукции
+                {t("block3.title")}
               </h3>
               <p className="text-lg font-normal text-white/80">
-                Оборудование и решения для производителей, дистрибуторов и
-                ритейлеров, принимающих участие в реализации Национальной
-                системы маркировки
+                {t("block3.message")}
               </p>
             </div>
           </div>
@@ -105,12 +102,10 @@ const Solutions = () => {
 
             <div className="relative flex flex-col gap-2 p-7">
               <h3 className="text-2xl font-bold text-black ">
-                Производства
+                {t("block4.title")}
               </h3>
               <p className="text-lg font-normal text-black/80">
-                Поставляем и внедряем оборудование: весы, POS-системы, ТСД,
-                RFID, сканеры, промышленную визуализацию и софт — WMS, TMS, BI.
-                Всё — под ключ.
+                {t("block4.message")}
               </p>
             </div>
           </div>

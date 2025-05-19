@@ -3,15 +3,18 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import PrimaryButton from "./PrimaryButton";
 import { FaPhoneAlt } from "react-icons/fa";
+import LanguageSwitcher from "./LanguageSwitcher";
+// import { useTranslations } from "next-intl";
 
-const Navbar = () => {
+
+const Navbar = ({ locale }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [menuItems, setMenuItems] = useState([]);
   const dropdownRef = useRef(null);
 
+  // const t = useTranslations("NavBar");
   useEffect(() => {
     const fetchMenuItems = async () => {
       try {
@@ -63,25 +66,7 @@ const Navbar = () => {
 
         {/* Burger Menu Button */}
         <div className="md:hidden flex items-center gap-4">
-          <Link
-            href={``}
-            className="text-white border border-white/50 border-solid rounded-full py-1 px-3 flex items-center gap-1 [backdrop-filter:blur(20px)] [background:linear-gradient(91.15deg,_rgba(255,_255,_255,_0.15),_rgba(153,_153,_153,_0.15))]"
-          >
-            Рус
-            <svg
-              className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </Link>
+          <LanguageSwitcher locale={locale} />
           <button
             className="text-white"
             onClick={toggleMenu}
@@ -163,25 +148,7 @@ const Navbar = () => {
               </Link>
             </div>
             <li>
-              <Link
-                href={``}
-                className="hover:text-slate-200 border border-white/50 border-solid rounded-full py-1 px-3 flex items-center gap-1 [backdrop-filter:blur(20px)] [background:linear-gradient(91.15deg,_rgba(255,_255,_255,_0.15),_rgba(153,_153,_153,_0.15))]"
-              >
-                Рус
-                <svg
-                  className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </Link>
+              <LanguageSwitcher locale={locale} />
             </li>
           </ul>
         </div>

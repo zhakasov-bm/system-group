@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import LeadMagnet from "../components/LeadMagnet";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations("Contact");
+
   return (
     <div className="">
       <div className="relative h-[240px] md:h-[360px] overflow-hidden">
@@ -18,12 +21,12 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/30" />{" "}
         <div className="container relative mx-auto px-4 py-24 md:pt-50 text-white z-10">
           <h1 className="text-4xl text-center md:text-5xl font-bold text-transparent !bg-clip-text [background:linear-gradient(91.15deg,_#fff,_#999)] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
-            Контакты
+            {t("title")}
           </h1>
         </div>
       </div>
       <div className="container mx-auto px-4 py-10 md:py-20 text-black z-10 flex flex-col gap-8">
-        <h3 className="text-2xl md:text-4xl font-bold">Свяжитесь с нами</h3>
+        <h3 className="text-2xl md:text-4xl font-bold">{t("label")}</h3>
         <div className="flex flex-col md:flex-row gap-4">
           <div className="md:w-5/12 flex flex-col gap-8 md:p-4">
             <ul className="flex flex-col gap-4 text-lg md:text-base font-medium">

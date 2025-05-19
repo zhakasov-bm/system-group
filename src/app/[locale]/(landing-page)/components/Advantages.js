@@ -4,6 +4,7 @@ import { AiOutlineSafety } from "react-icons/ai";
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
 import { TfiWorld } from "react-icons/tfi";
 import PrimaryButton from "./PrimaryButton";
+import { useTranslations } from "next-intl";
 
 const AdvantageCard = ({ Icon, title }) => (
   <div className="flex flex-col gap-4 items-center">
@@ -18,6 +19,9 @@ const AdvantageCard = ({ Icon, title }) => (
 );
 
 const Advantages = () => {
+  const t = useTranslations("Advantages");
+  const tBtn = useTranslations("Button");
+
   return (
     <div className="relative min-h-[600px] md:h-[700px]">
       <Image
@@ -35,29 +39,29 @@ const Advantages = () => {
         <div className="flex flex-col gap-8 md:gap-16 items-center">
           <div className="flex flex-col gap-2 text-center">
             <span className="text-primary-600 font-semibold text-lg md:text-xl">
-              Преимущества
+              {t("name")}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold">
-              Комплексный подход &quot;под ключ&quot;
+              {t("title")}
             </h2>
           </div>
 
           <div className="grid grid-cols-2 md:flex md:flex-row gap-8 md:gap-12 lg:gap-16 justify-between items-center w-full max-w-6xl">
-            <AdvantageCard Icon={IoSettingsOutline} title="Всe в одном месте" />
+            <AdvantageCard Icon={IoSettingsOutline} title={t("allInOne")} />
             <AdvantageCard
               Icon={AiOutlineSafety}
-              title="Надeжное оборудование"
+              title={t("reliableEquipment")}
             />
             <AdvantageCard
               Icon={IoCheckmarkDoneSharp}
-              title="Гарантия качества решений"
+              title={t("qualityAssurance")}
             />
-            <AdvantageCard Icon={TfiWorld} title="Сервис по всей стране" />
+            <AdvantageCard Icon={TfiWorld} title={t("nationwideService")} />
           </div>
 
           <div className="mt-8 md:mt-12">
             <PrimaryButton variant="primary">
-              Получить консультацию
+              {tBtn("title")}
             </PrimaryButton>
           </div>
         </div>

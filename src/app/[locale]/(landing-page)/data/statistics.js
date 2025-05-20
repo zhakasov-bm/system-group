@@ -1,5 +1,3 @@
-import ru from "../data/ru.json";
-
 const statistics = [
   {
     value: tu.Statistics.yearsOfService.value,

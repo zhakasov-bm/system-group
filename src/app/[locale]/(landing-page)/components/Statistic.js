@@ -6,9 +6,9 @@ const partners = [
   { src: "/e6.svg", alt: "partner 6" },
   { src: "/e1.svg", alt: "partner 1" },
   { src: "/e2.svg", alt: "partner 2" },
+  { src: "/e5.svg", alt: "partner 5" },
   { src: "/e3.svg", alt: "partner 3" },
   { src: "/e4.svg", alt: "partner 4" },
-  { src: "/e5.svg", alt: "partner 5" },
 ];
 
 // Icons associated with each statistic block (if needed)

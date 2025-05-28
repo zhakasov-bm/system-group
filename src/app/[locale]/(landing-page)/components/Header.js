@@ -54,7 +54,7 @@ const Navbar = ({ locale }) => {
     <nav className="absolute w-full top-0 left-0 right-0 z-20">
       <div className="flex container p-4 lg:py-4 items-center justify-between mx-auto mt-4">
         <Link
-          href={"/"}
+          href={`/${locale}/`}
           className="text-2xl md:text-3xl text-white font-normal"
         >
           <Image
@@ -92,7 +92,7 @@ const Navbar = ({ locale }) => {
         <div className="hidden md:block md:w-auto" id="navbar">
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0 text-white justify-between items-center">
             <li key="about">
-              <Link href="/#about" className="hover:text-slate-200">
+              <Link href={`/${locale}/#about`} className="hover:text-slate-200">
               {t("about")}
               </Link>
             </li>
@@ -127,7 +127,7 @@ const Navbar = ({ locale }) => {
                   {menuItems.map((item) => (
                     <Link
                       key={item.id}
-                      href={`/posts/${item.id}`}
+                      href={`/${locale}/posts/${item.id}`}
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       {item.title}
@@ -137,7 +137,7 @@ const Navbar = ({ locale }) => {
               </div>
             </li>
             <li key="contact">
-              <Link href={`/contact`} className="hover:text-slate-200">
+              <Link href={`/${locale}/contact`} className="hover:text-slate-200">
                 {t("contact")}
               </Link>
             </li>
@@ -189,20 +189,20 @@ const Navbar = ({ locale }) => {
               <ul className="flex flex-col items-start gap-8 text-white text-xl">
                 <li>
                   <Link
-                    href="#about"
+                    href={`/${locale}/#about`}
                     className="hover:text-slate-200 transition-colors"
                     onClick={toggleMenu}
                   >
-                    О компании
+                    {t("about")}
                   </Link>
                 </li>
                 <li className="flex flex-col gap-4">
-                  <span className="font-medium">Решения</span>
+                  <span className="font-medium">{t("solution")}</span>
                   <div className="flex flex-col gap-4">
                     {menuItems.map((item) => (
                       <Link
                         key={item.id}
-                        href={`/posts/${item.id}`}
+                        href={`/${locale}/posts/${item.id}`}
                         className="text-lg hover:text-slate-200 transition-colors"
                         onClick={toggleMenu}
                       >
@@ -213,11 +213,11 @@ const Navbar = ({ locale }) => {
                 </li>
                 <li>
                   <Link
-                    href="/contact"
+                    href={`/${locale}/contact`}
                     className="hover:text-slate-200 transition-colors"
                     onClick={toggleMenu}
                   >
-                    Контакты
+                    {t("contact")}
                   </Link>
                 </li>
                 <li>

@@ -92,7 +92,7 @@ const Footer = () => {
             <h3 className="text-lg md:text-xl font-bold">{t("main")}</h3>
             <ul className="flex flex-col gap-2 text-lg md:text-base">
               <li>
-                <FooterLink href="/#about">{t("about")}</FooterLink>
+                <FooterLink href={`/${locale}/#about`}>{t("about")}</FooterLink>
               </li>
             </ul>
           </div>
@@ -103,7 +103,7 @@ const Footer = () => {
             <ul className="flex flex-col gap-2 text-lg md:text-base">
               {menuItems.map((item) => (
                 <li key={item.id}>
-                  <FooterLink href={`/posts/${item.id}`}>
+                  <FooterLink href={`/${locale}/posts/${item.id}`}>
                     {item.title}
                   </FooterLink>
                 </li>

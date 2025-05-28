@@ -59,18 +59,6 @@ const HeroSection = () => {
               <p className="text-lg font-normal max-w-[180px]">{t(`${key}.title`)}</p>
             </div>
           ))}
-          {/* <div>
-            <h1 className="text-5xl font-bold">{CompanyStats("value")}</h1>
-            <p className="text-lg font-normal">{CompanyStats("title")}</p>
-          </div>
-          <div>
-            <h1 className="text-5xl font-bold">{CompanyStats("value")}</h1>
-            <p className="text-lg font-normal">{CompanyStats("title")}</p>
-          </div>
-          <div>
-            <h1 className="text-5xl font-bold">{CompanyStats("value")}</h1>
-            <p className="text-base font-normal">{CompanyStats("title")}</p>
-          </div> */}
         </div>
       </div>
     </div>

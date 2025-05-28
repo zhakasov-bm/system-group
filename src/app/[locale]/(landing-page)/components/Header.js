@@ -5,20 +5,22 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import LanguageSwitcher from "./LanguageSwitcher";
-// import { useTranslations } from "next-intl";
-
+import { useParams } from 'next/navigation';
+import { useTranslations } from "next-intl";
 
 const Navbar = ({ locale }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [menuItems, setMenuItems] = useState([]);
   const dropdownRef = useRef(null);
+  const params = useParams();
 
-  // const t = useTranslations("NavBar");
+  const t = useTranslations("NavBar");
+
   useEffect(() => {
     const fetchMenuItems = async () => {
       try {
-        const response = await fetch("/api/posts");
+        const response = await fetch(`/api/posts?locale=${locale}`);
         const data = await response.json();
         setMenuItems(data.docs || []);
       } catch (error) {
@@ -91,7 +93,7 @@ const Navbar = ({ locale }) => {
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0 text-white justify-between items-center">
             <li key="about">
               <Link href="/#about" className="hover:text-slate-200">
-                О компании
+              {t("about")}
               </Link>
             </li>
             <li key="projects" className="relative group" ref={dropdownRef}>
@@ -100,7 +102,7 @@ const Navbar = ({ locale }) => {
                 onMouseEnter={() => setIsDropdownOpen(true)}
                 onMouseLeave={() => setIsDropdownOpen(false)}
               >
-                Решения
+                {t("solution")}
                 <svg
                   className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`}
                   fill="none"
@@ -115,6 +117,7 @@ const Navbar = ({ locale }) => {
                   />
                 </svg>
               </button>
+
               <div
                 className={`absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-all duration-200 ${isDropdownOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
                 onMouseEnter={() => setIsDropdownOpen(true)}
@@ -135,7 +138,7 @@ const Navbar = ({ locale }) => {
             </li>
             <li key="contact">
               <Link href={`/contact`} className="hover:text-slate-200">
-                Контакты
+                {t("contact")}
               </Link>
             </li>
             <div className="hover:text-primary-600 transition-colors text-white hidden lg:block">

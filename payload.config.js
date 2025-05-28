@@ -15,6 +15,26 @@ export default buildConfig({
   secret: process.env.PAYLOAD_SECRET || "",
   // Whichever Database Adapter you're using should go here
   // Mongoose is shown as an example, but you can also use Postgres
+  localization: {
+    locales: [
+      {
+        label: {
+          ru: 'Руский',
+          kz: 'Орысша',
+        },
+        code: 'ru',
+      },
+      {
+        label: {
+          ru: 'Казахский',
+          kz: 'Қазақша',
+        },
+        code: 'kz',
+      },
+    ],
+    defaultLocale: 'ru',
+    fallback: true,
+  },
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || "",

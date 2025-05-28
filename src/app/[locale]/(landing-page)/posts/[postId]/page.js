@@ -1,24 +1,21 @@
+export const dynamic = 'force-dynamic';
+
 import { getPayload } from "@/lib/payload";
 import { RichText as SerializedRichText } from "@payloadcms/richtext-lexical/react";
 import LeadMagnet from "../../components/LeadMagnet";
 import Image from "next/image";
-import PrimaryButton from "../../components/PrimaryButton";
 
 const Page = async ({ params }) => {
-  // Явно ждем параметры
-  const awaitedParams = await params;
-  const { postId } = awaitedParams;
 
-  // Получаем экземпляр Payload
   const payload = await getPayload();
+  const { postId, locale } = params;
 
-  // Запрос на получение поста по ID
   const data = await payload.findByID({
     collection: "posts",
     id: postId,
+    locale: locale,
   });
 
-  // Если пост не найден
   if (!data) {
     return <div>Post not found</div>;
   }

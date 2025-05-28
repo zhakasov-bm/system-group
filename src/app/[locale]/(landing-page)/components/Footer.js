@@ -2,9 +2,11 @@
 
 import { AiFillInstagram } from "react-icons/ai";
 import { FaLinkedin, FaYoutube } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useLocale } from "next-intl";
 
 const socialLinks = [
   {
@@ -47,11 +49,13 @@ const FooterLink = ({ href, children }) => (
 
 const Footer = () => {
   const [menuItems, setMenuItems] = useState([]);
+  const t = useTranslations("NavBar");
+  const locale = useLocale();
 
   useEffect(() => {
     const fetchMenuItems = async () => {
       try {
-        const response = await fetch("/api/posts");
+        const response = await fetch(`/api/posts?locale=${locale}`);
         const data = await response.json();
         setMenuItems(data.docs || []);
       } catch (error) {
@@ -85,17 +89,17 @@ const Footer = () => {
 
           {/* Main */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-lg md:text-xl font-bold">Главная</h3>
+            <h3 className="text-lg md:text-xl font-bold">{t("main")}</h3>
             <ul className="flex flex-col gap-2 text-lg md:text-base">
               <li>
-                <FooterLink href="/#about">О компании</FooterLink>
+                <FooterLink href="/#about">{t("about")}</FooterLink>
               </li>
             </ul>
           </div>
 
           {/* Solutions */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-lg md:text-xl font-bold">Решения</h3>
+            <h3 className="text-lg md:text-xl font-bold">{t("solution")}</h3>
             <ul className="flex flex-col gap-2 text-lg md:text-base">
               {menuItems.map((item) => (
                 <li key={item.id}>
@@ -140,8 +144,7 @@ const Footer = () => {
             reserved.
           </p>
           <p>
-            Данные на сайте носят информационный характер и не являются
-            публичной офертой
+            {t("info")}
           </p>
         </div>
       </div>

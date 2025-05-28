@@ -18,10 +18,10 @@ const PartnerSlider = () => {
             style={{ height: "60px", marginRight: "60px" }}
           >
             <Image
-              src={partner.src} // Access the `src` property
-              alt={partner.alt} // Access the `alt` property
-              width={200} // Explicit width (can be adjusted)
-              height={60} // Explicit height (can be adjusted)
+              src={partner.src} 
+              alt={partner.alt} 
+              width={200} 
+              height={60} 
               style={{ objectFit: "contain" }} // Ensures the image scales nicely
               priority // Optional: faster loading
             />

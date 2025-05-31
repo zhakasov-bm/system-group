@@ -12,7 +12,7 @@ const About = () => {
           <h3 className="text-xl font-semibold text-primary-600">
             {t("name")}
           </h3>
-          <h1 className="text-4xl font-bold text-black max-w-lg">
+          <h1 className="text-4xl font-bold text-black max-w-[550px]">
             {t("title")}
           </h1>
           <p

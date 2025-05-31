@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { useActionState } from "react";
 import { submitForm } from "@/app/actions/submitForm";
-import { formFields } from "../data/formFields";
-
+import { useTranslations } from "next-intl";
 
 const initialState = {
   success: false,
@@ -13,12 +12,16 @@ const initialState = {
   errors: {},
 };
 
+const fieldKeys = ["name", "company", "city", "phone", "comment"];
+
 const Modal = ({ isOpen, onClose }) => {
   const [mounted, setMounted] = useState(false);
   const [state, formAction, isPending] = useActionState(
     submitForm,
     initialState
   );
+
+  const t = useTranslations("Form");
 
   useEffect(() => {
     setMounted(true);
@@ -32,9 +35,9 @@ const Modal = ({ isOpen, onClose }) => {
       state?.errors?.[field] ? "border-red-500" : "border-gray-300"
     }`;
 
-  const renderFormField = (field) => {
-    const { id, label, type, placeholder, required } = field;
+  const renderFormField = (id) => {
     const error = state?.errors?.[id];
+    const isTextarea = id === "comment";
 
     return (
       <div key={id}>
@@ -42,14 +45,14 @@ const Modal = ({ isOpen, onClose }) => {
           htmlFor={id}
           className="block text-sm font-medium text-gray-700 mb-1"
         >
-          {label}
+          {t(`fields.${id}.label`)}
         </label>
-        {type === "textarea" ? (
+        {isTextarea ? (
           <textarea
             id={id}
             name={id}
-            placeholder={placeholder}
-            required={required}
+            placeholder={t(`fields.${id}.placeholder`)}
+            required
             className={inputClassName(id)}
             rows="4"
           />
@@ -57,12 +60,10 @@ const Modal = ({ isOpen, onClose }) => {
           <input
             id={id}
             name={id}
-            placeholder={placeholder}
-            required={required}
+            placeholder={t(`fields.${id}.placeholder`)}
+            required
             className={inputClassName(id)}
-            type={type}
-            pattern={field.pattern}
-            inputMode={field.inputMode}
+            type="text"
           />
         )}
         {error && <p className="text-sm text-red-500 mt-1">{error}</p>}
@@ -115,33 +116,31 @@ const Modal = ({ isOpen, onClose }) => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-gray-900">
-              Спасибо за заявку!
+              {t("successTitle")}
             </h3>
-            <p className="text-gray-600 mt-2">
-              Мы свяжемся с вами в ближайшее время
-            </p>
+            <p className="text-gray-600 mt-2">{t("successMessage")}</p>
           </div>
         ) : (
           <>
             <h2 className="text-2xl font-bold mb-6 text-center">
-              Оставьте заявку — и мы подберем решение под ваш бизнес
+              {t("title")}
             </h2>
 
             {state.message && !state.success && (
               <p className="text-sm text-red-500 mb-2 text-center">
-                {state.message}
+                {t("errorMessage") || state.message}
               </p>
             )}
 
             <form action={formAction} className="space-y-4">
-              {formFields.map(renderFormField)}
+              {fieldKeys.map(renderFormField)}
 
               <button
                 type="submit"
                 className="md:max-w-full w-full rounded-4xl px-8 py-3 bg-primary-600 text-white font-semibold cursor-pointer transition-colors duration-300"
                 disabled={isPending}
               >
-                {isPending ? "Отправка..." : "Отправить"}
+                {isPending ? t("submitting") : t("submit")}
               </button>
             </form>
           </>

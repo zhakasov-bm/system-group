@@ -32,9 +32,7 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-transparent !bg-clip-text [background:linear-gradient(91.15deg,_#fff,_#999)] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
             {t("title")}
           </h1>
-          <p className="hidden md:block md:text-xl max-w-[520px] md:px-0">
-            {t("subtitle")}
-          </p>
+          <p className="hidden md:block md:text-xl max-w-[550px] md:px-0" dangerouslySetInnerHTML={{ __html: t("subtitle") }}/>
 
           {/* Button moved under h1 */}
           <div className="mt-4 z-50">
@@ -56,7 +54,7 @@ const HeroSection = () => {
           {keys.map((key) => (
             <div key={key}>
               <h1 className="text-5xl font-bold">{t(`${key}.value`)}</h1>
-              <p className="text-lg font-normal max-w-[180px]">{t(`${key}.title`)}</p>
+              <p className="text-lg font-normal max-w-[240px]" dangerouslySetInnerHTML={{ __html: t(`${key}.title`) }} />
             </div>
           ))}
         </div>

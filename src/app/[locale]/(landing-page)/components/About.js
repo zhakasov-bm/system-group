@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 
 const About = () => {
   const t = useTranslations("About");
-
+  //check
   return (
     <section id="about" className="container mx-auto px-4">
       <div className="flex flex-col md:flex-row gap-20 py-20">

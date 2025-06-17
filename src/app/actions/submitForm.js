@@ -1,6 +1,8 @@
 // app/actions/submitForm.js
 "use server";
 
+import { sendTelegramMessage } from "../utils/telegram";
+
 export async function submitForm(prevState, formData) {
   const rawData = {
     name: formData.get("name"),
@@ -24,6 +26,16 @@ export async function submitForm(prevState, formData) {
     const data = await res.json();
 
     if (data.success) {
+      const message = `
+      <b>Новая заявка!</b>
+      <b>Имя:</b> ${rawData.name}
+      <b>Компания:</b> ${rawData.company}
+      <b>Город:</b> ${rawData.city}
+      <b>Телефон:</b> ${rawData.phone}
+      <b>Комментарий:</b> ${rawData.comment || "-"}
+      `;
+      await sendTelegramMessage(message);
+      
       return {
         success: true,
         message: "Спасибо за заявку! Мы свяжемся с вами в ближайшее время.",

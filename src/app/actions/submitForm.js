@@ -1,7 +1,7 @@
 // app/actions/submitForm.js
 "use server";
 
-import { sendTelegramMessage } from "../utils/telegram";
+import { sendTelegramMessage } from "@/utils/telegram";
 
 export async function submitForm(prevState, formData) {
   const rawData = {

@@ -34,7 +34,10 @@ export async function submitForm(prevState, formData) {
       <b>Телефон:</b> ${rawData.phone}
       <b>Комментарий:</b> ${rawData.comment || "-"}
       `;
+
+      console.log("📨 Отправка в Telegram...");
       await sendTelegramMessage(message);
+      console.log("✅ Отправлено в Telegram!");
       
       return {
         success: true,

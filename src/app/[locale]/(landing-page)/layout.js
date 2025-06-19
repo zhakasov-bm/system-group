@@ -1,3 +1,5 @@
+import Script from "next/script";
+
 export const dynamic = 'force-dynamic';
 
 import { Geist, Geist_Mono } from "next/font/google";
@@ -29,6 +31,20 @@ export default async function RootLayout({ children, params }) {
   
   return (
     <html lang={locale}>
+      <head>
+        {/* Google Tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17223874900"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17223874900');
+            `,
+          }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar locale={locale}/>

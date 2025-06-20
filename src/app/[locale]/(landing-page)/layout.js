@@ -33,8 +33,13 @@ export default async function RootLayout({ children, params }) {
     <html lang={locale}>
       <head>
         {/* Google Tag */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17223874900"></script>
-        <script
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17223874900"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
